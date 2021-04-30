@@ -1,0 +1,122 @@
+PYTHON FEAUTURES/DIFFERENCES AS COMPARED TO OTHER LANGUAGES LIKE C/C++ ::::::
+
+
+
+Everything in python are objects including functions, the primitive data types like int float bool char like if fun() is a function and we give the command a=fun then a would also be a will also point to the function object fun(), hence a() will be equal to fun()
+
+thats why object class is inherited in every class that we build in python because object class defines all the objects that are considered to be as data types in other languages therefore we need to inherit this object class to use these data types/objects in other classes
+
+Functions are considered as first class citizens thats why its a functional programming language meaning whatever we can do with variables we can also do all the things with functions as well like assigning, passing and swap
+
+python is a functional programming language as well as object oriented meanwhle java is oop language and as well as procedural
+
+its a dynamic languuage not static meaning the variables(reference variables that will be pointing towards an object of a type whose value is initialized) are declared in the runtime itself and not compile time hence the reference variable can point to any type of object at runtime
+
+example a=10 means a is a reference variable that has assigned an int type object to point at and if we change a="kartik" means the int class object is then deleted by garbage collection and now the same reference variable a points to a string class object that has value kartik
+
+more than one reference variable can point to the same object but one refrence variable cannot point to more than 1 object
+
+condition for checking if 2 reference variables points to same object 'is' ex- a is b gives true if both points to same object
+
+exception : -6 to 256 values are reserved by python meaning if 2 variables are initialized with same value then both will point to the same object ex - if we initialize a=10 and b=10 then a is b will give true but if we initialize both the values greater than 256 then it will return false( to make excution of program fast as these values are mostly used in program)
+
+size of int in python = ram or we can say unlimited memory and its not fixed meaning the size is allocated at runtime (thats the reason python is slow because operations on variables is proportional to the size of the variable or O(n) n=size of  variable
+
+python is a strongly type langauage meaning it checks the data type of variables whose operation between them we are gonna perform ex - a=10 b="kartik" => this will give error as both are different types but in loosely type languages like c,c++,java,javascript it will execute
+
+// operation is integer division meaning it gives only the integer part of the result after performing division
+
+** operation is power operator like a ki power 2 = a^2
+
+list in python is heterogeneous means it can store different data type elements in the same array and its also indexable by negative number in reverse like the index of last index can also be -1
+
+Tuple is immutable data type in python (for safety point of view) but we can point the tuple reference variable to a different tuple by assigning its value once again  and also if the individual item inside the tuple is a list which is mutable then we can change the elements of the list individually but not the whole list as the list is an element of the tuple
+
+set is an unordered data type means that the elements are not in order and also cannot have duplicate values, ordered sets are also there in python
+
+dictionary is a key:value pair structure in which each key would have only one value but 2 or more keys cann have the same value
+
+list, set and dictionaries are only mutable everything else immutable 
+
+[start element : end element-1 : jump number]
+
+for reverse printing [-1::-1] last element se start karke -1 jump 
+
+{} is reserved for dictionaries and sets and empty list is also boolean false
+
+indentatation should be right in python
+
+for swapping values , we should create tuple and assign it to reverse tuple ex: a,b(new tuple) = b,a(old tuple) [first b,a tuple is formed using "b,a" and then the values are assigned to a new tuple
+
+enumerate(list) function is used to create the tuple for the list like index,element and we can assign it to a new tuple for a for loop using " for i,ch in enumerate(a): " where a = "kartik", ch will be assigned with each character and i would be the character index using for loop
+
+creating a list using range, a=list(range(1,11,2)) then a =[1,3,5,7,9] or "a=[i for i in range(1,11,2)]"  where 11 is not included and 2 is the step and we can also use range to print numbers from 1 to n like "for i in range(1,n+1) : print(i)"
+
+len can be used for giving the number of elements in the list, ex- len(a) will give 2 if 2 elements present,,,, in 2d list we can check the number of columns by using len(a[0]) this will give the number of columns in 1st row
+
+any structure can be converted to other ex- t = tuple and to convert it into list we can use "l=list(t)" 
+
+'end = " " ' inside print would specify what to do after printing, by default end ="\n" if end not specified,,,, print() means newline
+
+list =[], tuple = (), set = {}, dictionary = {key:value}
+
+for table of 1 to 10 , a = [ [i*n for i in range(1,11)] for n in range(1,11)] , this list is a 2d list containing 10 other list for tables of 1 to n,,,, n=number for table,,,, i=multiple
+
+break : to break from a loop,,, continue : to skip an iteration
+
+for else clause : if no break statement hit in for loop then else statement will execute else otherwise
+
+if no return statement in function then by default returns none
+
+inbuilt functions are provided in python like lambda, map, filter, reduce
+
+lambda function= "sum = lambda a,b: a+b" (lambda fun is used only if the function is small and have only a return statement)
+
+map function is used to apply a given function to each element of the iterable ex for multiplying every element of list a with 2 : list(map(multiply,a)) where multiply is a function which multiply parameter by 2,, what map does is pass every element of the list to this function and stores result into a list (by using lambda function too as the multiply function is one line : list(map(lambda x: 2*x, a)) )
+
+filter function is used to store only those elements of the list that passes the condition present in the function which is present inside it ex: list(filter(iseven,a)),,, where iseven is a function which returns only true or false based on the parameter which is passed and a is a list containing some numbers,,, the new list will store only even numbers (by using lambda function too,,,, list(filter(lambda x: x%2==0 , a)) )
+
+reduce function is used to process 2 elements at a time until the list is end,,, firstly first 2 numbers in the list are passed then after that the result obtained from first two functions is passed along with the 3rd element an the process continues, it can be used to find the sum of all elements of the list as functools.reduce(sum,a) (by using lambda function : functools.reduce(lambda x,y: x+y, a) )
+ 
+"pass" is used to use empty functions without error and for comments we can only use #,,,, multiline strings= """"multiline string""""
+
+Everything is an instance of object class in python ex : isinstance(multiply, object) will give true
+
+a = input() ,,, will take an input from the user and stores it in a,,, *by default if we take input from the user, the value will always be stored as string* hence adding by + sign would mean concatenating 2 strings even if the value is inputted by the user are numbers (for taking integer input we can use a = int(input()), this will typecast input into integer before storing into a)
+
+hence typecasting is used to convert a variable with one datatype to other ex: a= int('56') will store an integer 56 in a even if '56' is a string,,, also if tuple t=(1,2,3) then a=list(t) will store the elements of t inside the list a
+
+for displaying message while taking input we can use a=int(input("Enter a number :"))
+
+if a is a string then a.split(" ") is used to split the words according to input string inside the split function(ex spaces) and store every word in a list of strings (ex: a="1 2 3 4 5" then li = a.split(" ") will imply li = ['1','2','3','4','5'] and to typecast all the elements in list from string to integer we can use li=list(map(int,li)) where int is a typecasting function to convert anything into int and map will pass every element of list li to this function)
+
+a.strip() is used to just remove the starting ending spaces if present of the string a,,, ex- if a="   kartik is good   " then a.strip() will make a as "kartik is good"
+
+The join() method takes all items in an iterable like list/tuple of strings and joins them into one string with a separable string ex- x=separatorstring.join(a) if a=['1','2','3'] and separatorstring="+" then x would be "1+2+3"
+
+if printing numbers like this print(num1,num2) then the numbers will be printed and a space between them will be given by default but if we wanna give some other thing we can use sep like print(num1,num2, sep="-")
+
+for printing variables a and b with a string we can use f string like print(f"The 2 numbers are {a} and {b}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
